@@ -30,6 +30,20 @@
         }
         header("location:./carritoCookie.php");
     }
+    if (isset($_GET['zapatos']) && $_GET['zapatos']=='eliminar') {
+        setcookie(
+            "zapatos",
+            "0"
+        );
+        header("location:./carritoCookie.php");
+    }
+    if (isset($_GET['cartera']) && $_GET['cartera']=='eliminar') {
+        setcookie(
+            "cartera",
+            "0"
+        );
+        header("location:./carritoCookie.php");
+    }
     ?>
     <form action="" method="post">
         <table cellpadding=10>
@@ -65,12 +79,12 @@
             <tr>
                 <td>Zapatos de vidrio</td>
                 <td><?= $zapatos ?></td>
-                <td><a href="">eliminar</a></td>
+                <td><a href="./carritoCookie.php?zapatos=eliminar">eliminar</a></td>
             </tr>
             <tr>
                 <td>Cartera de cartón</td>
                 <td><?= $cartera ?></td>
-                <td><a href="">eliminar</a></td>
+                <td><a href="./carritoCookie.php?cartera=eliminar">eliminar</a></td>
             </tr>
         </table>
     <?php } ?>
